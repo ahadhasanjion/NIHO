@@ -15,7 +15,7 @@ export const routes = createBrowserRouter([
         element:<Main></Main>,
         children:[
             {
-                path:'/',
+                path:'/home',
                 element:<Home></Home>,
                 // loader: () => fetch('http://localhost:5000/news')
             },

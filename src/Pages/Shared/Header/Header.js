@@ -5,9 +5,9 @@ const Header = () => {
     return (
         <header aria-label="Site Header" class="bg-white">
   <div
-    class="mx-auto flex h-16 max-w-screen-xl items-center gap-8 px-4 sm:px-6 lg:px-8"
+    class="mx-auto flex h-16 max-w-screen-2xl items-center gap-8 px-4 sm:px-6 lg:px-8"
   >
-    <Link class="block text-teal-600" to="/">
+    <Link class="block text-teal-600" to="/home">
       <span class="sr-only">Home</span>
       <svg
         class="h-8"
