@@ -8,12 +8,14 @@ const Main = () => {
     return (
         <div>
             <Header></Header>
-            <div className='container mx-auto "grid grid-cols-3 gap-4'>
-                <div>
-                    <LeftSide></LeftSide>
-                </div>
-                <div className='col-span-2'>
-                    <Outlet></Outlet>
+            <div className='px-12'>
+                <div className="">
+                    {/* <div className=''>
+                        <LeftSide></LeftSide>
+                    </div> */}
+                    <div className=''>
+                        <Outlet className=""></Outlet>
+                    </div>
                 </div>
             </div>
             <Footer></Footer>

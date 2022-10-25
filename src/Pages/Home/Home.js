@@ -1,16 +1,13 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
-import Courses from '../Courses/Courses';
-import LanguageSummary from '../LanguageSummary/LanguageSummary';
+import LanguageSummary from '../Shared/LanguageSummary/LanguageSummary';
 
 const Home = () => {
     const allLanguage = useLoaderData();
     return (
         <div>
-        <h2>AHJ News Home {allLanguage.length}</h2>
         {
-            allLanguage.map(news => <LanguageSummary key={category._id} courses={Courses}>
-
+            allLanguage.map(courses => <LanguageSummary className="grid grid-cols-3" key={courses._id} courses={courses}>
             </LanguageSummary>)
         }
     </div>

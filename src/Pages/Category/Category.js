@@ -1,9 +1,14 @@
 import React from 'react';
+import { useLoaderData } from 'react-router-dom';
+import LanguageSummary from '../Shared/LanguageSummary/LanguageSummary';
 
 const Category = () => {
+    const categoryLanguage = useLoaderData();
     return (
         <div>
-            <h1>LLDDD</h1>
+            {
+                categoryLanguage.map(courses => <LanguageSummary className="grid grid-cols-3 gap-5"key={courses._id} courses={courses}></LanguageSummary>)
+            }
         </div>
     );
 };
