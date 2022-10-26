@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 
 const Header = () => {
+  const {user,logOut} = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+    .then( () => {})
+    .catch(error => console.error(error))
+  }
     return (
         <header aria-label="Site Header" class="bg-white">
   <div
@@ -47,12 +55,25 @@ const Header = () => {
 
       <div class="flex items-center gap-4">
         <div class="sm:flex sm:gap-4">
-          <Link
+          {
+            user?.uid?
+            <>
+            <button className="block rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-teal-700" onClick={handleLogOut}>Log Out</button>
+            </>
+            :
+            <Link
             class="block rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-teal-700"
             to="/login"
           >
             Login
           </Link>
+          }
+          {/* <Link
+            class="block rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-teal-700"
+            to="/login"
+          >
+            Login
+          </Link> */}
         </div>
 
         <button
