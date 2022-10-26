@@ -1,13 +1,13 @@
 .login-form{
     margin: 0 auto;
-    width: 35%;
+    width: 25%;
     margin-bottom: 80px;
     margin-top: 20px;
-    padding: 20px;
+    padding: 50px;
 }
 .form-container{
-    width: 500px;
-    height: 550px;
+    width: 200px;
+    height: 500px;
     border: 1px solid #95A0A7;
     border-radius: 8px;
     margin: 30px auto;
@@ -30,7 +30,7 @@
     line-height: 20px;
 }
 .form-control input{
-    width: 415px;
+    width: 300px;
     height: 45px;
     border: 1px solid #95A0A7;
     border-radius: 4px;
@@ -40,7 +40,7 @@
 }
 
 .btn-submit{
-    width: 440px;
+    width: 180px;
     height: 45px;
     background: rgb(121, 224, 224);
     font-weight: 400;

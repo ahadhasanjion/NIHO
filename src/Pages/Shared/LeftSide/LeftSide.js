@@ -1,21 +1,21 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
 
 const LeftSide = () => {
-    const [categories, setCategories] = useState([]);
-
-    useEffect(() => {
-        fetch('http://localhost:5000/courses-categories')
-        .then(res => res.json())
-        .then(data => setCategories(data))
-    }, [])
     return (
         <div>
-            {
-                categories.map(category => <p key={category.id}>
-                    <Link to={`/category/${category.id}`}>{category.name}</Link>
-                </p>)
-            }
+            <aside className="w-full p-6 sm:w-60 dark:bg-gray-900 dark:text-gray-100">
+	<nav className="space-y-8 text-sm">
+		<div className="space-y-2">
+			<h2 className="text-sm font-semibold tracking-widest uppercase dark:text-gray-400"></h2>
+			<div className="flex flex-col space-y-1">
+				<a rel="noopener noreferrer" href="#">Installation</a>
+				<a rel="noopener noreferrer" href="#">Plugins</a>
+			</div>
+		</div>
+		
+	</nav>
+</aside>
+            
         </div>
     );
 };

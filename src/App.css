@@ -13,6 +13,25 @@
   }
 }
 
+#light{
+  background-color: #FFFF;
+}
+#dark{
+  background-color: rgba(48, 41, 41, 0.747);
+}
+
+#light .main {
+  background-color: rgba(160, 211, 178, 1);
+}
+#dark .main {
+  background-color: rgba(48, 41, 41, 0.747);
+}
+
+.switch{
+  position: absolute;
+  top: 20px;
+  right: 50%;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

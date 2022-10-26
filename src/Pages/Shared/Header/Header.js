@@ -1,9 +1,12 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
+import Switch from "react-switch";
+
 
 const Header = () => {
   const {user,logOut} = useContext(AuthContext);
+  
 
   const handleLogOut = () => {
     logOut()
@@ -11,12 +14,13 @@ const Header = () => {
     .catch(error => console.error(error))
   }
     return (
-        <header aria-label="Site Header" class="bg-white">
+      <div>
+           <header aria-label="Site Header" class="bg-white">
   <div
     class="mx-auto flex h-16 max-w-screen-2xl items-center gap-8 px-4 sm:px-6 lg:px-8"
   >
-    <Link class="block text-teal-600" to="/home">
-      <span class="sr-only">Home</span>
+    <Link class="block text-teal-600" to="/">
+      <span class="sr-only"></span>
       <svg
         class="h-8"
         viewBox="0 0 28 24"
@@ -58,6 +62,7 @@ const Header = () => {
           {
             user?.uid?
             <>
+              <span className='pt-2'>{user?.displayName}</span>
             <button className="block rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-teal-700" onClick={handleLogOut}>Log Out</button>
             </>
             :
@@ -68,12 +73,19 @@ const Header = () => {
             Login
           </Link>
           }
-          {/* <Link
+        </div>
+        <div class="sm:flex sm:gap-4">
+          {
+            user?.photoURL?
+            <>
+            <img style={{height:"30px"}} className="rounded-full" src={user?.photoURL} alt={user.displayName}></img>
+            </>
+            :
+            <Link
             class="block rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-teal-700"
-            to="/login"
-          >
-            Login
-          </Link> */}
+            to="/login">Login</Link>
+            
+          }
         </div>
 
         <button
@@ -100,6 +112,7 @@ const Header = () => {
   </div>
 </header>
 
+      </div>
     );
 };
 

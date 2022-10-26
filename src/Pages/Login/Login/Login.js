@@ -3,7 +3,7 @@ import './Login.css';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
-import { GoogleAuthProvider } from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 
 const Login = () => {
     const naviGate = useNavigate();
@@ -21,7 +21,6 @@ const Login = () => {
          signIn(email, password)
          .then(result => {
             const user = result.user;
-            console.log(user);
             setError('')
             form.reset();
             naviGate(from, {replace: true})
@@ -37,11 +36,17 @@ const Login = () => {
         providerLogIn(googleProvider)
         .then(result => {
             const user = result.user;
-            console.log(user)
         })
         .catch(error => console.error(error))
     }
-
+    const githubProvider = new GithubAuthProvider();
+    const handleGithubSignIn  = () => {
+        providerLogIn(githubProvider)
+        .then(result => {
+            const user = result.user;
+        })
+        .catch(error => console.error(error))
+    }
 
     return (
         <div className='mb-20 login-form bg-teal-600'>
@@ -60,7 +65,7 @@ const Login = () => {
                 <span>or</span>
                 <div className='flex justify-center align-center mt-4'>
                     <button onClick={handleGoogleSignIn} style={{fontSize:"30px"}} className='mx-2 text-fuchsia-50'><FaGoogle></FaGoogle></button>
-                    <button  style={{fontSize:"30px"}} className='mx-2 text-fuchsia-50'><FaGithub></FaGithub></button>
+                    <button  onClick={handleGithubSignIn} style={{fontSize:"30px"}} className='mx-2 text-fuchsia-50'><FaGithub></FaGithub></button>
                 </div>
                 <input className="btn-submit" type="submit" value="Login"/>
                 <p className='text-danger'>{error}</p>
