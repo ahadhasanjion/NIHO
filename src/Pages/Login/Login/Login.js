@@ -11,7 +11,7 @@ const Login = () => {
     const [error, setError]  =useState('');
     const location = useLocation();
 
-    const from = location.state?.from?.pathname || '/'
+    const from = location.state?.from?.pathname || '/';
 
     const handleSubmit = event => {
          event.preventDefault();
@@ -23,7 +23,7 @@ const Login = () => {
             const user = result.user;
             setError('')
             form.reset();
-            naviGate(from, {replace: true})
+            naviGate(from, {replace: true});
          })
          .catch(error => {
             console.error(error);

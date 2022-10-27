@@ -23,12 +23,12 @@ export const routes = createBrowserRouter([
             {
                 path:'/courses',
                 element:<Courses></Courses> ,
-                loader: () => fetch('http://localhost:5000/course')
+                loader: () => fetch('https://niho-server.vercel.app/course')
             },
             {
                 path:'/course/:id',
                 element:<Course></Course>,
-                loader: ({params}) => fetch(`http://localhost:5000/course/${params.id}`)
+                loader: ({params}) => fetch(`https://niho-server.vercel.app/course/${params.id}`)
             },
             {
                 path:'/faq',
@@ -48,8 +48,8 @@ export const routes = createBrowserRouter([
             },
             {
                 path:'/premium/:id',
-                element:<Premium></Premium>,
-                 loader: ({params}) => fetch(`http://localhost:5000/premium/${params.id}`)
+                element:<PrivateRoute><Premium></Premium></PrivateRoute>,
+                 loader: ({params}) => fetch(`https://niho-server.vercel.app/premium/${params.id}`)
             }
         ]
     }
