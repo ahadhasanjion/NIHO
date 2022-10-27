@@ -17,6 +17,7 @@ function App() {
       <RouterProvider router={routes}><App /></RouterProvider>
       <div className='switch text-teal-600'>
                  <Switch onChange={toggleTheme} checked={theme ==='dark'} />
+          
           </div>
     </div>
     </themeContext.Provider>
