@@ -7,6 +7,8 @@ import Login from "../Pages/Login/Login/Login";
 import Register from "../Pages/Login/Register/Register";
 import Blog from "../Pages/Shared/Blog/Blog";
 import Faq from "../Pages/Shared/Faq/Faq";
+import Premium from "../Pages/Premium/Premium";
+import PrivateRoute from "./privateRoute/PrivateRoute";
 
 
 export const routes = createBrowserRouter([
@@ -43,6 +45,11 @@ export const routes = createBrowserRouter([
             {
                 path:'/register',
                 element:<Register></Register>
+            },
+            {
+                path:'/premium/:id',
+                element:<Premium></Premium>,
+                 loader: ({params}) => fetch(`http://localhost:5000/premium/${params.id}`)
             }
         ]
     }

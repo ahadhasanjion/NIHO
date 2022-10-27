@@ -17,7 +17,7 @@ const Courses = () => {
 			<h2 className="text-sm font-semibold tracking-widest uppercase dark:text-gray-400"></h2>
       <div className="flex flex-col space-y-1">
 				{
-          allCourse.map(course => <Link to={`/course/${course._id}`} className='btn' key={course._id}>{course.name}</Link>)
+          allCourse.map(course => <Link to={`/course/${course._id}`} className="p-4 border-2 bg-teal-600 text-white font-bold" key={course._id}>{course.name}</Link>)
         }
 			</div>
 		</div>
