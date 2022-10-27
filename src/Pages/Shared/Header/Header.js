@@ -15,7 +15,7 @@ const Header = () => {
   }
     return (
       <div>
-      <div className="px-4  mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-4">
+      <div className="px-4  mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-4 relative">
         <div className="flex justify-between items-center relative ">
         <Link class="block text-teal-600" to="/">
       <span class="sr-only"></span>
@@ -32,6 +32,7 @@ const Header = () => {
       </svg>
       NiHo
     </Link>
+    <themeContext></themeContext>
           <ul className="flex items-center hidden space-x-8 lg:flex">
             <li>
               <Link

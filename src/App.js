@@ -16,7 +16,7 @@ function App() {
     <div className="App" id={theme}>
       <RouterProvider router={routes}><App /></RouterProvider>
       <div className='switch text-teal-600'>
-                 <Switch onChange={toggleTheme} checked={theme ==='dark'} />
+                 <Switch className='md:top-0 lg:top-5' onChange={toggleTheme} checked={theme ==='dark'} />
           
           </div>
     </div>
