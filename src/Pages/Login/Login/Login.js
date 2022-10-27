@@ -55,7 +55,7 @@ const Login = () => {
 
     return (
         
-        <div className='mb-20 login-form bg-teal-600'>
+        <div className='mb-20 login-form bg-teal-600 sm:w-100 py-3'>
             <h2 className="text-2xl text-fuchsia-50 font-bold">Login in to your account</h2>
             <p className="text-fuchsia-50 font-normal text-sm">Don't have account?
             <Link to='/register'><span>sign up here</span></Link></p>
