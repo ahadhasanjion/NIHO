@@ -44,12 +44,12 @@ const Register = () => {
                     <input type="text" name="name" placeholder="enter username"/>
                 </div>
                 <div className='form-control'>
-                    <label htmlFor='name'>PhotoURL</label>
-                    <input type="text" name="photoURL" placeholder="enter username"/>
+                    <label htmlFor='photoURL'>PhotoURL</label>
+                    <input type="text" name="photoURL" placeholder="photourl"/>
                 </div>
                 <div className='form-control'>
-                    <label htmlFor='photoURL'>Email</label>
-                    <input type="text" name="email" placeholder="photoURL" required/>
+                    <label htmlFor='email'>Email</label>
+                    <input type="email" name="email" placeholder="enter email" required/>
                 </div>
                 <div className='form-control'>
                     <label htmlFor='password'>Password</label>
