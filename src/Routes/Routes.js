@@ -9,12 +9,14 @@ import Blog from "../Pages/Shared/Blog/Blog";
 import Faq from "../Pages/Shared/Faq/Faq";
 import Premium from "../Pages/Premium/Premium";
 import PrivateRoute from "./privateRoute/PrivateRoute";
+import Error from "../Error/Error";
 
 
 export const routes = createBrowserRouter([
     {
         path:'/',
         element:<Main></Main>,
+        errorElement:<Error></Error>,
         children:[
             {
                 path:'/',

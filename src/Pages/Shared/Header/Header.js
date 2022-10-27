@@ -32,6 +32,7 @@ const Header = () => {
           fill="currentColor"
         />
       </svg>
+      NiHo
     </Link>
 
     <div class="flex flex-1 items-center justify-end md:justify-between">

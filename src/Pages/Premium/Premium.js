@@ -7,8 +7,8 @@ import html2canvas from 'html2canvas';
 const Premium = () => {
     const course = useLoaderData();
     const {title,details,price,Enroll,image_url} = course;
-    const downloadpdf = () => {
-      html2canvas(document.getElementById('course')).then(canvas => {
+    const downloadPDF = () => {
+      html2canvas(document.getElementById('premium')).then(canvas => {
 
         const imgData = canvas.toDataURL('image/png');
         const pdf = new jsPDF();
@@ -23,7 +23,7 @@ const Premium = () => {
 		<img src={image_url} alt="" className="object-cover w-full mb-4 h-60 sm:h-96 dark:bg-gray-500" />
     <div className='flex justify-between align-center px-5'>
 		    <h2 className="mb-1 text-xl font-bold text-white">{title}</h2>
-        <button onClick={downloadpdf} type="button" className="px-2 font-semibold border rounded  text-white flex">PDF <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+        <button onClick={downloadPDF} type="button" className="px-2 font-semibold border rounded  text-white flex">PDF <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
   <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
 </svg></button>
     </div>

@@ -14,7 +14,7 @@ function App() {
   return (
     <themeContext.Provider value={{theme, toggleTheme}}>
     <div className="App" id={theme}>
-      <RouterProvider router={routes}></RouterProvider>
+      <RouterProvider router={routes}><App /></RouterProvider>
       <div className='switch text-teal-600'>
                  <Switch onChange={toggleTheme} checked={theme ==='dark'} />
           </div>

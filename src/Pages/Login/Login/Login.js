@@ -21,6 +21,7 @@ const Login = () => {
          signIn(email, password)
          .then(result => {
             const user = result.user;
+            console.log(user);
             setError('')
             form.reset();
             naviGate(from, {replace: true});
@@ -36,6 +37,8 @@ const Login = () => {
         providerLogIn(googleProvider)
         .then(result => {
             const user = result.user;
+            console.log(user);
+            naviGate(from, {replace: true});
         })
         .catch(error => console.error(error))
     }
@@ -44,11 +47,14 @@ const Login = () => {
         providerLogIn(githubProvider)
         .then(result => {
             const user = result.user;
+            console.log(user)
+            naviGate(from, {replace: true});
         })
         .catch(error => console.error(error))
     }
 
     return (
+        
         <div className='mb-20 login-form bg-teal-600'>
             <h2 className="text-2xl text-fuchsia-50 font-bold">Login in to your account</h2>
             <p className="text-fuchsia-50 font-normal text-sm">Don't have account?

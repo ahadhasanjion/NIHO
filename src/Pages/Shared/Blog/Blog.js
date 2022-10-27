@@ -3,7 +3,7 @@ import './Blog.css'
 
 const Blog = () => {
     return (
-        <div className='mx-8 mb-10'>
+        <div className='mx-8 mb-10' style={{width:"50%",margin:"0 auto", marginTop:"30px", marginBottom:"30px"}}>
             <div className="space-y-6">
                 <details className="group border-l-4 border-green-500 bg-gray-50 p-6">
                     <summary className="flex cursor-pointer items-center justify-between">
